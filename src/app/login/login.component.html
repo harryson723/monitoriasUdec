@@ -1,7 +1,13 @@
-<form>
-  <label for="username">Usuario: </label>
-  <input id="username"/>
-  <label for="password">Contrasena: </label>
-  <input id="password"/>
-  <input type="submit"/>
+<form [formGroup]="formInfo">
+   <p-card>
+     <span class="p-float-label">
+       <input type="text" id="username" pInputText formControlName="username">
+       <label for="username">Nombre de Usuario</label>
+    </span>
+     <span class="p-float-label">
+       <input type="password" id="password" pInputText formControlName="password">
+       <label for="password">Contraseña de Usuario</label>
+    </span>
+     <input type="submit" value="Ingresar" (click)="submitForm()" pButton />
+   </p-card>
 </form>
